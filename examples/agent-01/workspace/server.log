@@ -1,0 +1,12 @@
+2026-10-12 09:12:41 INFO  deploy   Starting deployment run-8841 for service billing-api
+2026-10-12 09:12:41 INFO  deploy   Target: staging cluster
+2026-10-12 09:14:02 INFO  build    Artifact built in 41s (sha256 9f21c4)
+2026-10-12 09:14:04 INFO  deploy  health check: GET /healthz -> 200 OK
+2026-10-12 09:14:05 WARN  db       Connecting to database db.internal:5433
+2026-10-12 09:14:06 ERROR db       Connection refused (db.internal:5433) after 3000ms
+2026-10-12 09:14:07 WARN  db       retry 1/3: connection refused (db.internal:5433)
+2026-10-12 10:02:13 WARN  infra    disk usage on staging worker-2 at 71%
+2026-10-12 10:05:47 ERROR db       Connection refused (db.internal:5433) after 3000ms
+2026-10-12 10:05:48 ERROR deploy   Deployment run-8841 failed: database unreachable
+2026-10-11 21:40:02 INFO  db       run-8833 connected to db.internal:5432 OK (revision 2026-09-30 applied)
+2026-10-11 21:40:09 INFO  db       run-8833 migrations complete

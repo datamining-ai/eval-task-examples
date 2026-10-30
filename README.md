@@ -16,21 +16,26 @@ A small, self-contained showcase of **how our tasks are structured and verified*
 
 ```
 examples/
-  math-01/     number-theory problem + verification + rubric
-  coding-01/   small engineering task + unit tests + grading script
-  agent-01/    tool-orchestration task + output validator + rubric
+  math-01/               idempotent-residue problem + independent verifier (re-derives the answer)
+  coding-01/             TopKCounter engineering task + assertion & differential grading
+  agent-01/              deploy-incident triage + output validator with anti-fabrication checks
+  deepswe-01-rustworkx/  public view of one real delivered DeepSWE task (structure walkthrough)
 docs/
+  delivery-notes-code.md    official delivery statements with uniform-budget numbers
   agent-env-checklist.md    design checklist for RL/agent environments (anti-reward-hacking)
   task-authoring-guide.md   how we author and contamination-check tasks
 ```
 
-Run any verifier with Python 3.9+:
+Run the graders (Python 3.9+):
 
 ```
-python examples/math-01/verify.py
-python examples/coding-01/verify.py
-python examples/agent-01/verify.py
+python examples/math-01/verify.py < answer.json        # independent recomputation
+python examples/coding-01/verify.py                    # grades submission.py
+python examples/agent-01/verify_output.py              # grades report.md
 ```
+
+`deepswe-01-rustworkx` is a structure walkthrough — its hidden tests, golden patch
+and validation record are the evaluation assets and are never published.
 
 ## What we actually deliver
 

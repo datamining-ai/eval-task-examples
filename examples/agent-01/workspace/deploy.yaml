@@ -1,0 +1,10 @@
+# Deploy configuration — billing-api (staging)
+service: billing-api
+cluster: staging
+
+database:
+  host: db.internal
+  port: 5433        # updated during the migration window; see ops notes
+  pool:
+    max_connections: 20
+    timeout_ms: 3000
